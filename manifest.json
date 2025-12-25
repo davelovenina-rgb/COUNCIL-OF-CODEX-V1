@@ -1,0 +1,23 @@
+
+{
+  "name": "Council of Codex Sanctuary",
+  "short_name": "Codex",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "The Council of Codex. The External Brain. The Eternal Sanctuary.",
+  "icons": [
+    {
+      "src": "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=192&auto=format&fit=crop",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=512&auto=format&fit=crop",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait-primary"
+}

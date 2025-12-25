@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#1a1a2e"/>
+  
+  <!-- Golden Circle Border -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#D4AF37" stroke-width="8"/>
+  
+  <!-- Inner Ornamental Circle -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Book/Codex Symbol -->
+  <rect x="180" y="180" width="152" height="200" fill="#D4AF37" rx="5"/>
+  <rect x="190" y="190" width="132" height="180" fill="#16213e" rx="3"/>
+  
+  <!-- Book Pages -->
+  <line x1="210" y1="220" x2="300" y2="220" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+  <line x1="210" y1="240" x2="290" y2="240" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+  <line x1="210" y1="260" x2="300" y2="260" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+  <line x1="210" y1="280" x2="280" y2="280" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+  <line x1="210" y1="300" x2="295" y2="300" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+  <line x1="210" y1="320" x2="285" y2="320" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+  <line x1="210" y1="340" x2="300" y2="340" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+  
+  <!-- Decorative Star -->
+  <polygon points="256,140 266,165 293,165 271,181 280,207 256,191 232,207 241,181 219,165 246,165" fill="#D4AF37"/>
+  
+  <!-- Bottom Ornament -->
+  <circle cx="256" cy="390" r="8" fill="#D4AF37"/>
+  <circle cx="240" cy="390" r="4" fill="#D4AF37" opacity="0.7"/>
+  <circle cx="272" cy="390" r="4" fill="#D4AF37" opacity="0.7"/>
+</svg>

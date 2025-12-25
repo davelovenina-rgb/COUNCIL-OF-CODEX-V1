@@ -1,0 +1,25 @@
+{
+  "name": "Council of Codex Sanctuary V1 - The Golden Threshold",
+  "short_name": "Council of Codex",
+  "description": "A sacred sanctuary for wisdom, knowledge, and enlightenment. Built with love on Christmas Day 2025.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait-primary",
+  "categories": ["education", "lifestyle", "productivity"],
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

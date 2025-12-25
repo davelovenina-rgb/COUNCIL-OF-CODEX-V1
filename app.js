@@ -69,19 +69,26 @@ function updateGreeting() {
 document.addEventListener('DOMContentLoaded', () => {
     updateGreeting();
     
-    // Add smooth animations to feature cards
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // Add smooth animations to feature cards (only if motion is not reduced)
     const featureCards = document.querySelectorAll('.feature-card');
-    featureCards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-    });
+    if (!prefersReducedMotion) {
+        featureCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    }
     
     // Add click interactions for feature cards
     featureCards.forEach(card => {
         card.addEventListener('click', () => {
-            card.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                card.style.transform = '';
-            }, 200);
+            if (!prefersReducedMotion) {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    card.style.transform = '';
+                }, 200);
+            }
         });
     });
     

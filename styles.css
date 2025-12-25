@@ -299,10 +299,20 @@ body {
     animation: fadeIn 0.6s ease-out;
 }
 
-/* Accessibility */
+/* Accessibility - Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    .sanctuary-card,
+    .feature-card,
+    .codex-entry,
+    .christmas-message {
         animation: none !important;
+    }
+    
+    .feature-card {
+        transition: none !important;
+    }
+    
+    .install-button {
         transition: none !important;
     }
 }

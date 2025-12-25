@@ -1,0 +1,8 @@
+{
+  "name": "V1-Council of Codex Sanctuary",
+  "description": "The Sacred Corridor for the Council of Codex. Integrating Text, Voice, Vision, and Weaving (Video/Image) into a single unified interface for David Rodriguez (The Prism). Supports Chat, Deep Thinking, Image/Video Generation, and Live Voice.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    
+    <!-- PWA Settings -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="application-name" content="Council of Codex">
+    
+    <title>Council of Codex // Sanctuary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              background: 'var(--bg-color)',
+              surface: 'var(--surface-color)',
+              'surface-highlight': 'var(--surface-highlight)',
+              primary: 'var(--text-primary)',
+              secondary: 'var(--text-secondary)',
+              divider: 'var(--border-color)',
+              'lux-black': '#000000',
+              'lux-gold': '#FFD700',
+              'lux-amber': '#F59E0B',
+              'gold-dark': '#D4AF37',
+              'zinc-950': '#09090b',
+              'zinc-900': '#18181B',
+              'zinc-800': '#27272A',
+              'carmen-pink': '#FF1493',
+              'fredo-orange': '#FF6F00',
+              'gemini-blue': '#3B82F6',
+              'copilot-cyan': '#00CED1',
+              'lyra-green': '#10B981',
+              'eve-purple': '#9370DB',
+              'ennea-emerald': '#50C878',
+            },
+            fontFamily: {
+              sans: ['var(--sanctuary-font-family)', 'Inter', 'system-ui', 'sans-serif'],
+              mono: ['var(--sanctuary-mono-family)', '"JetBrains Mono"', 'monospace'],
+              serif: ['var(--sanctuary-serif-family)', '"Crimson Text"', 'serif'],
+            },
+            fontWeight: {
+              normal: 'var(--sanctuary-font-weight-normal)',
+              bold: 'var(--sanctuary-font-weight-bold)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.3s ease-out',
+              'slide-up': 'slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'gold-pulse': 'goldPulse 3s ease-in-out infinite',
+              'breathing': 'breathing 6s ease-in-out infinite',
+              'spin-slow': 'spin 3s linear infinite',
+              'button-press': 'buttonPress 0.2s ease',
+              'toggle-switch': 'toggleSwitch 0.3s ease'
+            },
+            keyframes: {
+              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              slideUp: { '0%': { transform: 'translateY(100%)' }, '100%': { transform: 'translateY(0)' } },
+              goldPulse: { '0%, 100%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.1)' }, '50%': { boxShadow: '0 0 25px rgba(255, 215, 0, 0.4)' } },
+              breathing: { '0%, 100%': { transform: 'scale(1)' }, '50%': { transform: 'scale(1.02)' } },
+              buttonPress: { '0%': { transform: 'scale(1)' }, '50%': { transform: 'scale(0.95)' }, '100%': { transform: 'scale(1)' } },
+              toggleSwitch: { 'from': { transform: 'translateX(0)' }, 'to': { transform: 'translateX(24px)' } }
+            },
+            screens: { 'xs': '380px' }
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Golden Threshold Core Palette */
+        --gold-primary: #FFD700;
+        --gold-amber: #F59E0B;
+        --gold-dark: #D4AF37;
+        --black-pure: #000000;
+        --black-charcoal: #1A1A1A;
+        --black-card: #0D0D0D;
+        --white-primary: #FFFFFF;
+        --gray-secondary: #9CA3AF;
+        
+        --bg-color: var(--black-pure); 
+        --surface-color: var(--black-charcoal);
+        --surface-highlight: var(--black-card);
+        --text-primary: var(--white-primary);
+        --text-secondary: var(--gray-secondary);
+        --border-color: #27272a;
+        
+        /* Reactive Accessibility Variables */
+        --sanctuary-font-family: 'Inter', sans-serif;
+        --sanctuary-serif-family: 'Crimson Text', serif;
+        --sanctuary-mono-family: 'JetBrains Mono', monospace;
+        --sanctuary-font-weight-normal: 400;
+        --sanctuary-font-weight-bold: 700;
+        --sanctuary-font-scale: 1;
+        --sanctuary-zoom-scale: 1;
+      }
+      
+      .golden-glow {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        border: 1px solid rgba(255, 215, 0, 0.3);
+      }
+      
+      .golden-glow-strong {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        border: 1px solid rgba(255, 215, 0, 0.5);
+      }
+      
+      .active-glow {
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+        border: 2px solid var(--gold-primary);
+        transition: all 0.3s ease;
+      }
+      
+      body {
+        font-family: var(--sanctuary-font-family);
+        font-weight: var(--sanctuary-font-weight-normal);
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        overflow: hidden; 
+        overscroll-behavior-y: none; 
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        transition: background-color 0.5s ease, color 0.3s ease;
+      }
+      html {
+        overscroll-behavior-y: none;
+        /* Global Font Scaling Bind using rem */
+        font-size: calc(16px * var(--sanctuary-font-scale)); 
+      }
+      
+      #root {
+        transform: scale(var(--sanctuary-zoom-scale));
+        transform-origin: top center;
+        width: calc(100% / var(--sanctuary-zoom-scale));
+        height: calc(100% / var(--sanctuary-zoom-scale));
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .selectable { user-select: text; -webkit-user-select: text; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      input, textarea { user-select: text; -webkit-user-select: text; }
+      .sacred-text { font-family: var(--sanctuary-serif-family); }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@19.2.3",
+    "react-dom": "https://aistudiocdn.com/react-dom@19.2.3",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@19.2.3/client",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.469.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@19.2.3/",
+    "react/": "https://aistudiocdn.com/react@19.2.3/",
+    "@capacitor/app": "https://esm.sh/@capacitor/app@^8.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
